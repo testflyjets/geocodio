@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key&fields=cd,stateleg,school,timezone&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
+    uri: http://api.geocod.io/v1.4/geocode?api_key=secret_api_key&fields=cd,stateleg,school,timezone&q=54%20West%20Colorado%20Boulevard%20Pasadena%20CA%2091105
     body:
       encoding: US-ASCII
       string: ''

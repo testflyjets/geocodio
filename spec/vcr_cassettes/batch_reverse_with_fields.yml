@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.geocod.io/v1.2/reverse?api_key=secret_api_key&fields=cd,stateleg,school,timezone
+    uri: http://api.geocod.io/v1.4/reverse?api_key=secret_api_key&fields=cd,stateleg,school,timezone
     body:
       encoding: UTF-8
       string: '["37.331669,-122.03074","34.145760590909,-118.15204363636","37.7815,-122.404933"]'

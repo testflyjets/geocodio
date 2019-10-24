@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key&fields=cd,stateleg&q=4141%20woronzof%20dr%20anchorage%20ak%2099517
+    uri: http://api.geocod.io/v1.4/geocode?api_key=secret_api_key&fields=cd,stateleg&q=4141%20woronzof%20dr%20anchorage%20ak%2099517
     body:
       encoding: US-ASCII
       string: ''

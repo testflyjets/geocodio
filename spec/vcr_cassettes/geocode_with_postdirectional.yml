@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.geocod.io/v1.2/geocode?api_key=secret_api_key&q=1600%20Pennsylvania%20Ave%20NW%20Washington%20DC%2020500
+    uri: http://api.geocod.io/v1.4/geocode?api_key=secret_api_key&q=1600%20Pennsylvania%20Ave%20NW%20Washington%20DC%2020500
     body:
       encoding: US-ASCII
       string: ''
