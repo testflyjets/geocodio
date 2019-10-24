@@ -65,20 +65,6 @@ module Geocodio
     end
     alias :reverse :reverse_geocode
 
-    # Sends a GET request to http://api.geocod.io/v1/parse to correctly dissect
-    # an address into individual parts. As this endpoint does not do any
-    # geocoding, parts missing from the passed address will be missing from the
-    # result.
-    #
-    # @param address [String] the full or partial address to parse
-    # @return [Geocodio::Address] a parsed and formatted Address
-    def parse(address, options = {})
-      params, options = normalize_params_and_options(options)
-      params[:q] = address
-
-      Address.new get('/parse', params, options).body
-    end
-
     private
 
       METHODS.each do |method, _|

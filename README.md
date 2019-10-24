@@ -83,15 +83,6 @@ address_sets = geocodio.reverse_geocode([{ lat: 37.331669, lng: -122.03074 }, { 
 # => [#<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>, #<Geocodio::AddressSet:0x007fdf23a07f80 @query="54 West Colorado Boulevard, Pasadena, CA 91105", @addresses=[...]>]
 ```
 
-### Parsing
-
-```ruby
-address = geocodio.parse('1 Infinite Loop, Cupertino, CA 95014')
-# => #<Geocodio::Address:0x007fa3c15f41c0 @number="1", @street="Infinite", @suffix="Loop", @city="Cupertino", @state="CA", @zip="95014", @accuracy=nil, @formatted_address="1 Infinite Loop, Cupertino CA, 95014">
-```
-
-Note that this endpoint performs no geocoding; it merely formats a single provided address according to geocod.io's standards.
-
 ### Additional fields
 
 Geocodio has added support for retrieving [additional fields][fields] when geocoding or reverse geocoding. To request these fields, pass an options hash to either `#geocode` or `#reverse_geocode`. Possible fields include `cd` or `cd113`, `stateleg`, `school`, and `timezone`:
