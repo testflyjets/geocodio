@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - nginx/1.12.2
+      - nginx/1.16.1
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
-      X-Powered-By:
-      - PHP/7.1.14
       Cache-Control:
-      - no-cache
+      - no-cache, private
       Date:
-      - Fri, 16 Feb 2018 17:35:12 GMT
-      Request-Handler:
-      - api19
+      - Thu, 24 Oct 2019 17:55:41 GMT
+      X-Billable-Lookups-Count:
+      - '1'
+      X-Billable-Fields-Count:
+      - '0'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -40,25 +40,38 @@ http_interactions:
       - Content-Type
       Access-Control-Expose-Headers:
       - Request-Handler
+      Request-Handler:
+      - api32
     body:
       encoding: UTF-8
-      string: '{"results":[{"address_components":{"number":"68","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"68
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":1,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"58","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"58
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"60","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
-        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"60
-        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"10","predirectional":"S","street":"De
+      string: '{"results":[{"address_components":{"number":"10","predirectional":"S","street":"De
         Lacey","suffix":"Ave","formatted_street":"S De Lacey Ave","city":"Pasadena","county":"Los
         Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"10
-        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles"},{"address_components":{"number":"69","street":"Mc Cormick","suffix":"Aly","formatted_street":"Mc
+        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.99,"accuracy_type":"rooftop","source":"Los
+        Angeles County"},{"address_components":{"number":"69","street":"Mc Cormick","suffix":"Aly","formatted_street":"Mc
         Cormick Aly","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"69
-        Mc Cormick Aly, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.9,"accuracy_type":"rooftop","source":"Los
-        Angeles"}]}'
+        Mc Cormick Aly, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.99,"accuracy_type":"rooftop","source":"Los
+        Angeles County"},{"address_components":{"number":"58","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"58
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.99,"accuracy_type":"rooftop","source":"Los
+        Angeles County"},{"address_components":{"number":"68","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"68
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.99,"accuracy_type":"rooftop","source":"Los
+        Angeles County"},{"address_components":{"number":"60","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"60
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145373,"lng":-118.151925},"accuracy":0.99,"accuracy_type":"rooftop","source":"Los
+        Angeles County"},{"address_components":{"number":"1","predirectional":"N","street":"De
+        Lacey","suffix":"Ave","formatted_street":"N De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91103","country":"US"},"formatted_address":"1
+        N De Lacey Ave, Pasadena, CA 91103","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0.99,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"},{"address_components":{"number":"1","predirectional":"S","street":"De
+        Lacey","suffix":"Ave","formatted_street":"S De Lacey Ave","city":"Pasadena","county":"Los
+        Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"1
+        S De Lacey Ave, Pasadena, CA 91105","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0.99,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"},{"address_components":{"number":"85","predirectional":"W","street":"Colorado","suffix":"Blvd","formatted_street":"W
+        Colorado Blvd","city":"Pasadena","county":"Los Angeles County","state":"CA","zip":"91105","country":"US"},"formatted_address":"85
+        W Colorado Blvd, Pasadena, CA 91105","location":{"lat":34.145759,"lng":-118.15223},"accuracy":0.99,"accuracy_type":"nearest_street","source":"TIGER\/Line\u00ae
+        dataset from the US Census Bureau"}]}'
     http_version: 
-  recorded_at: Fri, 16 Feb 2018 17:35:12 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Thu, 24 Oct 2019 17:55:41 GMT
+recorded_with: VCR 5.0.0

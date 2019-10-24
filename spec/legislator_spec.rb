@@ -39,7 +39,7 @@ describe Geocodio::Legislator do
   end
 
   it 'has a address' do
-    expect(legislator.address).to eq('2423 Rayburn HOB; Washington DC 20515-0527')
+    expect(legislator.address).to eq('2423 Rayburn House Office Building; Washington DC 20515-0527')
   end
 
   it 'has a phone' do

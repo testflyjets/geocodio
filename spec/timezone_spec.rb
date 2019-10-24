@@ -10,7 +10,7 @@ describe Geocodio::Timezone do
   end
 
   it 'has a name' do
-    expect(timezone.name).to eq('PST')
+    expect(timezone.name).to eq('America/Los_Angeles')
   end
 
   it 'has a utc_offset' do

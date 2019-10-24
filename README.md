@@ -28,7 +28,7 @@ geocodio = Geocodio::Client.new
 The `Geocodio::Client#geocode` method is used to request coordinates and expanded information on one or more addresses. It accepts an array of addresses and an options hash. If more than one address is provided, `#geocode` will use Geocodio's batch endpoint behind the scenes. It is possible for a geocoding request to yield multiple results with varying degrees of accuracy, so the `geocode` method will always return one `Geocodio::AddressSet` for each query made:
 
 ```ruby
-results = geocodio.geocode(['1 Infinite Loop, Cupertino, CA 95014'])
+results = geocodio.geocode('1 Infinite Loop, Cupertino, CA 95014')
 # => #<Geocodio::AddressSet:0x007fdf23a07f80 @query="1 Infinite Loop, Cupertino, CA 95014", @addresses=[...]>
 ```
 
@@ -85,7 +85,18 @@ address_sets = geocodio.reverse_geocode([{ lat: 37.331669, lng: -122.03074 }, { 
 
 ### Additional fields
 
-Geocodio has added support for retrieving [additional fields][fields] when geocoding or reverse geocoding. To request these fields, pass an options hash to either `#geocode` or `#reverse_geocode`. Possible fields include `cd` or `cd113`, `stateleg`, `school`, and `timezone`:
+Geocodio has added support for retrieving [additional fields][fields] when geocoding or reverse geocoding. To request these fields, pass an options hash to either `#geocode` or `#reverse_geocode`. Possible fields include the following (all US-only except `timezone`):
+
+* Congressional districts and Legislators: `cd`, `cd113`, `cd114`, `cd115`, or `cd116`
+* State legislative disctricts: `stateleg`
+* School districts: `school`
+* Census data: `census`, `census2010`, `census2011`, `census2012`, `census2013`, `census2014`, `census2015`, `census2016`, `census2017`, `census2018`,  or `census2019`
+* Demographics (census): `acs-demographics`
+* Economics: Income data (census): `acs-economics`
+* Families (census): `acs-families`
+* Housing (census): `acs-housing`
+* Social: Education and Veteran status (census): `acs-social`
+* `timezone`
 
 ```ruby
 address = geocodio.geocode(['54 West Colorado Boulevard Pasadena CA 91105'], fields: %w[cd stateleg school timezone]).best
