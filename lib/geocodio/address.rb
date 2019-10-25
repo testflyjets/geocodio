@@ -4,6 +4,7 @@ require 'geocodio/state_legislative_district'
 require 'geocodio/timezone'
 require 'geocodio/census'
 require 'geocodio/acs_metadata'
+require 'geocodio/acs_demographics'
 
 module Geocodio
   class Address
@@ -16,7 +17,8 @@ module Geocodio
 
     attr_reader :congressional_districts, :house_district, :senate_district,
                 :unified_school_district, :elementary_school_district,
-                :secondary_school_district, :census, :acs_metadata
+                :secondary_school_district, :census, :acs_metadata,
+                :acs_demographics
 
     attr_reader :timezone
 
@@ -68,7 +70,7 @@ module Geocodio
       set_school_districts(fields['school_districts'])                 if fields['school_districts']
       set_timezone(fields['timezone'])                                 if fields['timezone']
       set_census(fields['census'])                                     if fields['census']
-      set_acs_metadata(fields['acs'])                                  if fields['acs']
+      set_acs_data(fields['acs'])                                      if fields['acs']
     end
 
     def set_congressional_districts(districts)
@@ -107,10 +109,11 @@ module Geocodio
       @census = census.values.map{ |census_data| Census.new(census_data) }
     end
 
-    def set_acs_metadata(acs)
+    def set_acs_data(acs)
       return if acs.empty?
 
       @acs_metadata = AcsMetadata.new(acs)
+      @acs_demographics = AcsDemographics.new(acs)
     end
 
     def <=>(address)

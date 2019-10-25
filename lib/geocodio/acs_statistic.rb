@@ -1,22 +1,28 @@
+require 'geocodio/acs_statistic_metadata'
+require 'geocodio/acs_datapoint'
+
 module Geocodio
   class AcsStatistic
     attr_reader :name
     attr_reader :metadata
-    attr_reader :data_points
+    attr_reader :datapoints
 
     def initialize(name, data)
       @name = name
       @metadata = AcsStatisticMetadata.new(data)
-      @data_points = parse_data_points(data)
+      @datapoints = parse_data_points(data)
     end
 
     def parse_data_points(data)
-      @data_points = []
+      datapoints = []
 
       data.delete("meta")
+
       data.each do |name, values|
-        @data_points << AcsDataPoint.new(values)
+        datapoints << AcsDatapoint.new(name, values)
       end
+      
+      datapoints
     end
   end
 end
