@@ -5,7 +5,7 @@ module Geocodio
     attr_reader :demographics
 
     def initialize(payload = {})
-      @demographics = []
+      @demographics = {}
       if payload['demographics']
         parse_demographic_statistics(payload['demographics'])
       end
@@ -13,8 +13,12 @@ module Geocodio
 
     def parse_demographic_statistics(payload)
       payload.each do |statistic, data|
-        @demographics << AcsStatistic.new(statistic, data)
+        @demographics[statistic] = AcsStatistic.new(statistic, data)
       end
+    end
+
+    def find(demographic)
+      @demographics[demographic]
     end
   end
 end

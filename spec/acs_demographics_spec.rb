@@ -16,7 +16,7 @@ describe Geocodio::AcsDemographics do
   end
 
   context(:statistics) do
-    let(:statistic) { acs_demographics.demographics.first }
+    let(:statistic) { acs_demographics.demographics.values.first }
 
     it "should have a name" do
       expect(statistic.name).to eq("Median age")
@@ -52,10 +52,43 @@ describe Geocodio::AcsDemographics do
           expect(datapoint.value).to eq(44.5)
         end
 
-        it "shold have a margin of error" do
+        it "should have a margin of error" do
           expect(datapoint.margin_of_error).to eq(3.2)
         end
       end
     end
   end
+
+  context(:statistic_by_name) do
+    let(:statistic) { acs_demographics.find("Population by age range")}
+
+    it "should find the demographic by name" do
+      expect(statistic).not_to be(nil)
+    end
+
+    context(:datapoints) do
+      let(:datapoint) { statistic.find_datapoint("Male") }
+
+      it "should find a datapoint by name" do
+        expect(datapoint).not_to be(nil)
+      end
+
+      it "should have a name" do
+        expect(datapoint.name).to eq("Male")
+      end
+
+      it "should have a value" do
+        expect(datapoint.value).to eq(874)
+      end
+
+      it "should have a margin of error" do
+        expect(datapoint.margin_of_error).to eq(156)
+      end
+
+      it "should have a percentage" do
+        expect(datapoint.percentage).to eq(0.499)
+      end
+    end
+  end
+
 end
